@@ -10,18 +10,18 @@
     timezone: 'Asia/Ho_Chi_Minh',
     timezoneOffsetMinutes: 7 * 60,
     photos: [
-      { src: '../images/1.jpg', caption: 'Nụ cười anh thích nhất' },
-      { src: '../images/2.jpg', caption: 'Hen piaoliang' },
-      { src: '../images/3.jpg', caption: 'Hé hé, đáng yêu quá trời' },
-      { src: '../images/4.jpg', caption: 'Hai đứa mình và chiếc bánh kem' },
-      { src: '../images/5.jpg', caption: 'Em thật đẹp' },
-      { src: '../images/6.jpg', caption: 'Em giữa vườn hoa' },
-      { src: '../images/7.jpg', caption: 'Công chúa của anh' },
-      { src: '../images/8.jpg', caption: 'Em đẹp hơn mọi bông hoa' },
-      { src: '../images/9.jpg', caption: 'Bó hồng cho cô gái của anh' },
-      { src: '../images/10.jpg', caption: 'Hai đứa mình, mọi chuyến đi' }
+      { src: 'images/1.jpg', caption: 'Nụ cười anh thích nhất' },
+      { src: 'images/2.jpg', caption: 'Hen piaoliang' },
+      { src: 'images/3.jpg', caption: 'Hé hé, đáng yêu quá trời' },
+      { src: 'images/4.jpg', caption: 'Hai đứa mình và chiếc bánh kem' },
+      { src: 'images/5.jpg', caption: 'Em thật đẹp' },
+      { src: 'images/6.jpg', caption: 'Em giữa vườn hoa' },
+      { src: 'images/7.jpg', caption: 'Công chúa của anh' },
+      { src: 'images/8.jpg', caption: 'Em đẹp hơn mọi bông hoa' },
+      { src: 'images/9.jpg', caption: 'Bó hồng cho cô gái của anh' },
+      { src: 'images/10.jpg', caption: 'Hai đứa mình, mọi chuyến đi' }
     ],
-    music: '../music/birthday.mp3',
+    music: 'music/birthday.mp3',
     letter: `Gửi Trang của anh,
 
 Chúc mừng em tròn 22 tuổi. Anh không giỏi nói lời hoa mỹ, nên anh làm trang web nhỏ này, gom lại những khoảnh khắc của chúng mình.

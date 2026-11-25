@@ -2,10 +2,158 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sinh nhật Trang</title>
-  <meta http-equiv="refresh" content="0; url=mau-2-pastel-hoa/">
-  <script>location.replace('mau-2-pastel-hoa/' + location.search + location.hash);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff2ef">
+  <title>Sinh nhật Trang · Pastel hoa anh đào</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&amp;family=Nunito:wght@400;500;600;700;800&amp;display=swap&amp;subset=vietnamese">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="shared/config.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="bubbles.js"></script>
 </head>
-<body style="background:#fff0f4"></body>
+<body class="petals">
+  <canvas id="ambient" aria-hidden="true"></canvas>
+  <canvas id="fireworks" aria-hidden="true"></canvas>
+  <main>
+    <section id="countdown" class="hero waiting" aria-labelledby="waiting-name" hidden>
+      <div class="photo-bubbles" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="avatar" aria-hidden="true"><span class="avatar-petal p1">✿</span><span class="avatar-petal p2">❀</span><span class="avatar-petal p3">✿</span><img src="images/avatar.jpg" alt=""></div>
+        <p class="eyebrow">MỘT NGÀY DỊU DÀNG DÀNH CHO EM</p>
+        <h1 id="waiting-name" class="name">Vũ Thị Trang</h1>
+        <p class="hero-copy" id="countdown-copy"></p>
+        <div class="clock" role="timer" aria-label="Thời gian còn lại đến sinh nhật">
+          <div class="unit">
+            <div class="dial">
+              <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/><circle class="progress" cx="50" cy="50" r="46" pathLength="100"/></svg>
+              <span class="digits">00</span>
+            </div>
+            <span class="unit-label">Ngày</span>
+          </div>
+          <div class="unit">
+            <div class="dial">
+              <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/><circle class="progress" cx="50" cy="50" r="46" pathLength="100"/></svg>
+              <span class="digits">00</span>
+            </div>
+            <span class="unit-label">Giờ</span>
+          </div>
+          <div class="unit">
+            <div class="dial">
+              <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/><circle class="progress" cx="50" cy="50" r="46" pathLength="100"/></svg>
+              <span class="digits">00</span>
+            </div>
+            <span class="unit-label">Phút</span>
+          </div>
+          <div class="unit">
+            <div class="dial">
+              <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/><circle class="progress" cx="50" cy="50" r="46" pathLength="100"/></svg>
+              <span class="digits">00</span>
+            </div>
+            <span class="unit-label">Giây</span>
+          </div>
+        </div>
+        <p class="date" id="date"></p>
+        <p id="passed" class="passed" hidden>Sinh nhật năm nay đã qua, hẹn em năm sau ❤️</p>
+      </div>
+    </section>
+
+    <div id="birthday" hidden>
+      <section class="hero gift-stage" id="gift-stage" aria-labelledby="gift-title">
+        <div class="hero-inner">
+          <div class="ornament" aria-hidden="true"><span>✿</span><span>❀</span><span>✿</span></div>
+          <p class="eyebrow">MỘT NGÀY DỊU DÀNG DÀNH CHO EM</p>
+          <h1 id="gift-title">Có quà nhỏ cho em</h1>
+          <div class="present" aria-hidden="true">
+            <span class="present-box"></span>
+            <span class="present-lid"><i></i></span>
+            <span class="present-spark">❀</span>
+          </div>
+          <button type="button" class="action" id="open-gift" aria-controls="celebration">Mở quà 🎁</button>
+        </div>
+      </section>
+
+      <div id="celebration" hidden>
+        <section class="hero greeting" id="greeting">
+          <div class="hero-inner">
+            <div class="ornament" aria-hidden="true"><span>✿</span><span>❀</span><span>✿</span></div>
+            <p class="eyebrow">CHÚC MỪNG SINH NHẬT</p>
+            <h1 class="name written" id="written-name" tabindex="-1">Vũ Thị Trang</h1>
+            <p class="age" id="birthday-age"></p>
+            <a class="continue" href="#cake-section">Đến lúc ước rồi <span aria-hidden="true">↓</span></a>
+          </div>
+        </section>
+
+        <section class="chapter cake-chapter reveal" id="cake-section" aria-labelledby="cake-title">
+          <p class="eyebrow" aria-hidden="true">❀</p>
+          <h2 id="cake-title">Ước một điều đi em</h2>
+          <p id="candle-help">Chạm vào nến để thổi tắt.</p>
+          <div class="cake" aria-describedby="candle-help">
+            <div class="cake-layer bottom"></div>
+            <div class="cake-layer middle"></div>
+            <div class="cake-layer top"></div>
+            <button type="button" class="candle" id="candle" aria-label="Thổi tắt nến"><span class="flame"></span><span class="wax"></span><span class="smoke"></span></button>
+          </div>
+          <button type="button" class="action secondary" id="mic">🎤 Thổi bằng micro</button>
+          <p class="status" id="mic-status" role="status"></p>
+          <p class="wish-granted" id="wish-granted" role="status" hidden>Điều ước của em sẽ thành sự thật ✨</p>
+        </section>
+
+        <section class="chapter" aria-labelledby="album-title">
+          <header class="reveal">
+            <p class="eyebrow">ALBUM CỦA TRANG</p>
+            <h2 id="album-title">Những ngày nở hoa</h2>
+          </header>
+          <div class="album" id="album"></div>
+        </section>
+
+        <section class="chapter" aria-labelledby="timeline-title">
+          <header class="reveal">
+            <p class="eyebrow">CHUYỆN HAI ĐỨA</p>
+            <h2 id="timeline-title">Dòng thời gian kỷ niệm</h2>
+          </header>
+          <ol class="timeline" id="timeline"></ol>
+        </section>
+
+        <section class="chapter reveal" aria-labelledby="jar-title">
+          <p class="eyebrow" aria-hidden="true">❀</p>
+          <h2 id="jar-title">Lọ ước nguyện</h2>
+          <p>Chạm vào lọ để lấy một lời chúc.</p>
+          <button type="button" class="jar" id="jar" aria-label="Rút một lời chúc" aria-controls="wish-paper"><span aria-hidden="true">♥</span></button>
+          <blockquote class="wish-paper" id="wish-paper" aria-live="polite"></blockquote>
+        </section>
+
+        <section class="chapter reveal" aria-labelledby="letter-title">
+          <p class="eyebrow" aria-hidden="true">❀</p>
+          <h2 id="letter-title">Thư tay gửi em</h2>
+          <button type="button" class="envelope" id="envelope" aria-expanded="false" aria-controls="letter">
+            <span class="envelope-flap" aria-hidden="true"></span><span class="seal" aria-hidden="true">♥</span>
+            <span id="envelope-label">Mở thư</span>
+          </button>
+          <div class="letter" id="letter" hidden>
+            <p class="sr-only" id="letter-accessible"></p>
+            <p class="letter-text" id="letter-text" aria-hidden="true"></p>
+            <button type="button" class="action secondary" id="read-all">Hiện cả lá thư</button>
+          </div>
+        </section>
+
+        <section class="chapter finale reveal" aria-labelledby="final-title">
+          <div class="heart-scene">
+            <canvas id="heart" aria-hidden="true"></canvas>
+          </div>
+          <h2 id="final-title">Một ngày đầy hoa cho em</h2>
+          <p>Có rất nhiều ngày trong năm, nhưng chỉ một ngày thế giới có em. Chúc mừng sinh nhật, Vũ Thị Trang 🎂</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <button type="button" class="music action secondary" id="music" aria-pressed="false" hidden>♫ Bật nhạc</button>
+  <dialog class="lightbox" id="lightbox" aria-label="Xem ảnh">
+    <button type="button" class="lightbox-close" id="close-lightbox" aria-label="Đóng ảnh" autofocus>×</button>
+    <button type="button" class="lightbox-prev" id="prev-photo" aria-label="Ảnh trước">‹</button>
+    <figure><div id="full-photo"></div><figcaption id="photo-caption" aria-live="polite"></figcaption></figure>
+    <button type="button" class="lightbox-next" id="next-photo" aria-label="Ảnh tiếp theo">›</button>
+  </dialog>
+  <noscript><p class="no-script">Bật JavaScript để xem lời chúc sinh nhật của Trang.</p></noscript>
+</body>
 </html>
