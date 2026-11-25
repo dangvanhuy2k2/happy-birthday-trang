@@ -672,3 +672,4 @@ h1, h2, h3 { font-weight: 800; }
 @keyframes heartBurst { to { transform: translate(var(--dx), var(--dy)) scale(.4); opacity: 0; } }
 .photo-bubbles.still .photo-bubble { animation: none; bottom: auto; top: 30%; }
 @media (prefers-reduced-motion: reduce) { .avatar, .avatar-petal { animation: none; } }
+@media (max-width: 639px) { .photo-bubble { opacity: .8; } }

@@ -5,15 +5,15 @@
   if (!box || !config || !config.photos) return;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const photos = config.photos.map((p) => p.src);
-  const count = innerWidth < 640 ? 5 : 8;
+  const count = innerWidth < 640 ? 3 : 8;
   let next = 0;
   const rand = (a, b) => a + Math.random() * (b - a);
 
   function setup(bubble, first) {
-    const size = innerWidth < 640 ? rand(62, 92) : rand(80, 135);
+    const size = innerWidth < 640 ? rand(52, 74) : rand(80, 135);
     // tránh giữa màn hình để không che khung đếm ngược
     const side = Math.random() < 0.5 ? rand(1, 24) : rand(70, 93);
-    const dur = rand(16, 26);
+    const dur = innerWidth < 640 ? rand(22, 32) : rand(16, 26);
     bubble.style.setProperty('--size', size + 'px');
     bubble.style.setProperty('--x', side + 'vw');
     bubble.style.setProperty('--dur', dur + 's');
