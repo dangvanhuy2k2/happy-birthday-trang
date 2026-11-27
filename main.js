@@ -119,6 +119,7 @@
 
   function buildTimeline() {
     const timeline = byId('timeline');
+    if (!timeline) return;
     for (const milestone of config.timeline) {
       const item = document.createElement('li');
       item.className = 'reveal';
