@@ -10,16 +10,16 @@
     timezone: 'Asia/Ho_Chi_Minh',
     timezoneOffsetMinutes: 7 * 60,
     photos: [
-      { src: 'images/1.jpg', caption: 'Nụ cười anh thích nhất' },
-      { src: 'images/2.jpg', caption: 'Hen piaoliang' },
-      { src: 'images/3.jpg', caption: 'Hé hé, đáng yêu quá trời' },
+      { src: 'images/1.jpg', caption: 'Nụ cười này là của anh nha 😚' },
+      { src: 'images/2.jpg', caption: 'Hen piaoliang nè, xinh quá trời ✨' },
+      { src: 'images/3.jpg', caption: 'Hé hé, cục cưng đáng yêu xỉu 🐣' },
       { src: 'images/4.jpg', caption: 'Hai bạn nhỏ và em bánh kem mập ú 🎂' },
       { src: 'images/5.jpg', caption: 'Ngồi im thôi cũng xinh xỉu 🥺' },
       { src: 'images/6.jpg', caption: 'Bông hoa xinh nhất vườn là em nè 🌸' },
-      { src: 'images/7.jpg', caption: 'Công chúa của anh' },
-      { src: 'images/8.jpg', caption: 'Em đẹp hơn mọi bông hoa' },
-      { src: 'images/9.jpg', caption: 'Bó hồng cho cô gái của anh' },
-      { src: 'images/10.jpg', caption: 'Hai đứa mình, mọi chuyến đi' }
+      { src: 'images/7.jpg', caption: 'Công chúa nhỏ của anh đây 👑' },
+      { src: 'images/8.jpg', caption: 'Hoa ơi tránh ra, em xinh hơn rồi 🌷' },
+      { src: 'images/9.jpg', caption: 'Hồng xinh tặng bé xinh 🌹' },
+      { src: 'images/10.jpg', caption: 'Đi đâu cũng phải có hai đứa mình 🧳💕' }
     ],
     music: 'music/birthday.mp3',
     letter: `Gửi Trang của anh,
